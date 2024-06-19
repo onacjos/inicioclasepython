@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 from generators.generadorICA import generarDatosICA
 
@@ -12,7 +12,7 @@ def construirDataICA():
     print(dataFrameICA)
 
     #generando grafico de los datos por comuna
-    datosOrdenadosPorComuna=dataFrameICA.groupby("comuna")["ica"].mean
+    datosOrdenadosPorComuna=dataFrameICA.groupby("comuna")["ica"].mean()
     plt.figure(figsize=(20,20))
     datosOrdenadosPorComuna.plot(kind="bar",color="green")
     plt.show()
